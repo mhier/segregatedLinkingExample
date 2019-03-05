@@ -17,6 +17,8 @@ foo::~foo() {
   std::cout << "HIER foo()" << std::endl;
 }
 
+// commented, not needed to show the segfault issue
+/*
 extern "C" {
   IFACE* creator() {
     std::cout << "HIER creatorC BEGIN" << std::endl;
@@ -28,3 +30,4 @@ extern "C" {
     return ret;
   }
 }
+*/

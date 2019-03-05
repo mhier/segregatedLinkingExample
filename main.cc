@@ -28,9 +28,10 @@ int main() {
     std::cout << "HIER main() START" << std::endl;
     
     auto handle = dlmopen(LM_ID_NEWLM, "libC.so", RTLD_LAZY | RTLD_LOCAL);
-    
 //    auto handle = dlopen("libC.so", RTLD_LAZY | RTLD_LOCAL);  // this leads to crashes, as it does not separate the plugin
 
+// commented, not neede to show the segfault issue
+/*
     auto pA = creator();
     pA->fun();
     
@@ -38,8 +39,8 @@ int main() {
     assert(fn != nullptr);
     auto pC = fn();
     pC->fun();
+*/
 
     std::cout << "HIER main() END" << std::endl;
-
     return 0;
 }
