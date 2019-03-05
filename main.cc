@@ -4,6 +4,25 @@
 #include "myinterface.h"
 
 
+#ifdef WITH_CRASH
+#include <libxml++/libxml++.h>
+
+struct bar : xmlpp::Node {
+  bar();
+  ~bar() override;
+
+};
+
+bar::bar() : xmlpp::Node(nullptr) {
+  std::cout << "HIER bar()" << std::endl;
+}
+
+bar::~bar() {
+  std::cout << "HIER bar()" << std::endl;
+}
+#endif
+
+
 int main() {
 
     std::cout << "HIER main() START" << std::endl;
